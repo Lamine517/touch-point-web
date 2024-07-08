@@ -1,0 +1,11 @@
+.title-section::after{
+    display: block;
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: #A91836;
+    margin-top: 20px;
+}
+.title-section{
+    position: relative;
+}

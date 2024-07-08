@@ -1,0 +1,92 @@
+<div class="sidebar p-3">
+    <a href="#" id="logo">
+        <img src="assets/images/logo.png" alt="">
+    </a>
+    <ul>
+        <li class="nav-item">
+            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
+                <i class="fa fa-home me-2"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#services" data-bs-toggle="collapse" class="nav-link" routerLinkActiveOptions="{exact: true}">
+                <i class="fa fa-sliders me-2"></i>
+                <span>Services</span>
+                <i class="fa fa-caret-down" style="float: right;"></i>
+            </a>
+            <ul class="nav submenu collapse" id="services" data-bs-parent="services">
+                <li class="nav-item">
+                    <a routerLink="/services/airtime" routerLinkActive="active" class="nav-link">
+                        Airtime
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:(0)" routerLinkActive="active" class="nav-link">
+                        Mobile Money
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:(0)" routerLinkActive="active" class="nav-link">
+                        Vouchers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:(0)" routerLinkActive="active" class="nav-link">
+                        Agency Banking
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:(0)" routerLinkActive="active" class="nav-link">
+                        Touchpoint
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:(0)" routerLinkActive="active" class="nav-link">
+                        Insurance
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:(0)" routerLinkActive="active" class="nav-link">
+                        Data
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/transactions" routerLinkActive="active" class="nav-link">
+                <i class="fa fa-user-cog me-2"></i>
+                <span>Transactions</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#support" data-bs-toggle="collapse" class="nav-link" routerLinkActiveOptions="{exact: true}">
+                <i class="fa fa-ticket me-2"></i>
+                <span>Support</span>
+                <i class="fa fa-caret-down" style="float: right;"></i>
+            </a>
+            <ul class="nav submenu collapse" id="support" data-bs-parent="support">
+                <li class="nav-item">
+                    <a routerLink="/supports/ticketings" routerLinkActive="active" class="nav-link">
+                        Ticketing
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/supports/faq" routerLinkActive="active" class="nav-link">
+                        FAQ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/supports/formations" routerLinkActive="active" class="nav-link">
+                        Formations
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:(0)" routerLinkActive="active" class="nav-link">
+                        Chat
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

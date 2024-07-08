@@ -1,0 +1,70 @@
+<div class="row g-3 mt-4 d-flex flex-end">
+    <div class="col">
+        <select class="form-select form-select-sm">
+            <option selected>Catégory</option>
+            <option value="Category 1">Category 1</option>
+            <option value="Category 2">Category 2</option>
+            <option value="Category 3">Category 3</option>
+        </select>
+    </div>
+    <div class="col">
+        <select class="form-select form-select-sm">
+            <option selected>Services</option>
+            <option value="Services 1">Services 1</option>
+            <option value="Services 2">Services 2</option>
+            <option value="Services 3">Services 3</option>
+        </select>
+    </div>
+    <div class="col">
+        <select class="form-select form-select-sm">
+            <option selected>Hours</option>
+            <option value="Hours 1">Hours 1</option>
+            <option value="Hours 2">Hours 2</option>
+            <option value="Hours 3">Hours 3</option>
+        </select>
+    </div>
+    <div class="col">
+        <input type="text" class="form-control form-control-sm" placeholder="Date" onfocus="(this.type='date')" onblur="(this.type='text')">
+    </div>
+    <div class="col">
+        <button class="btn w-100 btn-sm btn-outline-danger"><i class="fa fa-file-pdf me-2"></i> Exporter</button>
+    </div>
+    <!-- <div class="col">
+
+    </div> -->
+    <div class="col">
+        <button class="btn w-100 btn-sm btn-outline-success"><i class="fa fa-file-excel me-2"></i> Exporter</button>
+    </div>
+</div>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Category</th>
+            <th scope="col">Services</th>
+            <th scope="col">Date</th>
+            <th scope="col">Heures</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of [0,1,2,3,4,5];let i = index">
+            <td>{{ i }}</td>
+            <td>Category {{ i }}</td>
+            <td>Manager</td>
+            <td>14/02/2021</td>
+            <td>09:00</td>
+            <td>
+                <span class="d-flex">
+                    <a href="javascript:(0)" class="nav-link">
+                        <i class="fa fa-eye me-3 text-dark"></i>
+                    </a>
+                    <a href="javascript:(0)" class="nav-link">
+                        <i class="fa fa-print text-success"></i>
+                    </a>
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>

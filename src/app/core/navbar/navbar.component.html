@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-between w-100 mb-3 pe-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" style="color: white;font-size: 16;font-weight: 600;" aria-current="page">{{ title }}</li>
+    </ol>
+  </nav>
+
+  <div class="d-flex">
+    <a href="javascript:(0)" class="nav-link" title="Notifications">
+      <i class="fa fa-bell icon-navbar"></i>
+    </a>
+    <a href="javascript:(0)" class="nav-link" title="Messages">
+      <i class="fa fa-envelope icon-navbar"></i>
+    </a>
+     <div class="user-wrapper dropdown">
+          <div class="user-avatar">
+              <img src="{{'assets/images/profil.png'}}" width="30px" alt="user-image" class="rounded-circle">
+          </div>
+          <span class="user-content">
+              <span>Adama GUEYE</span>
+              <span>Super Admin</span>
+          </span>
+
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+              <li>
+                  <a class="dropdown-item" href="javascript:(0)">
+                      <i class="fa fa-user-circle"></i>
+                      <span> Mon compte</span>
+                  </a>
+              </li>
+              <li>
+                  <a class="dropdown-item" href="#" data-bs-toggle="modal" routerLink="/auth/login"
+                      data-bs-target="#logoutConfirm">
+                      <i class="fa fa-sign-out-alt"></i>
+                      <span> Déconnexion</span>
+                  </a>
+              </li>
+          </ul>
+
+      </div>
+    <div>
+  </div>
+  </div>
+</div>

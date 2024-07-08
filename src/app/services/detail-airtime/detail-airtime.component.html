@@ -1,0 +1,84 @@
+<app-navbar [title]="'Airtime'"></app-navbar>
+
+<div class="tap-section cards g-3">
+  <nav class="px-4 pb-2">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <li class="nav-item nav-item-custom" *ngFor="let item of tablist" [id]="item.id">
+        <a class="nav-link" [ngClass]="{active: item.selected === true}" aria-current="page" data-bs-toggle="tab"
+          [attr.data-bs-target]="'#'+item.controls" type="button" role="tab" [attr.aria-controls]="item.controls"
+          [attr.aria-selected]="item.selected">
+          <img [src]="item.img" [alt]="item.title" [title]="item.title" width="40px">
+          <span>{{ item.title }}</span>
+        </a>
+      </li>
+    </div>
+  </nav>
+</div>
+
+<div class="tab-content mt-3 p-4" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-mtn" role="tabpanel" aria-labelledby="nav-mtn-tab" tabindex="0">
+    <form class="row g-4">
+      <div class="data-detail col-3">
+        <h6>Amount to data-detail collect</h6>
+        <h5>5,000</h5>
+      </div>
+      <div class="data-detail col-lg-3 col-sm-6">
+        <h6>Bank</h6>
+        <h5>Zenith Bank</h5>
+      </div>
+      <div class="data-detail col-lg-3 col-sm-6">
+        <h6>Customer’s account name </h6>
+        <h5>Cecilia Anthony</h5>
+
+      </div>
+      <div class="data-detail col-lg-3 col-sm-6">
+        <h6>Registered customer</h6>
+        <h5>Yes</h5>
+      </div>
+      <div class="data-detail col-lg-3 col-sm-6">
+        <h6>Customer’s phone number</h6>
+        <h5>+23490234567899</h5>
+      </div>
+      <div class="data-detail col-lg-3 col-sm-6">
+        <h6>Customer’s name</h6>
+        <h5>Cecilia Anthony</h5>
+      </div>
+      <div class="data-detail col-lg-3 col-sm-6">
+        <h6>Date</h6>
+        <h5>26 - 08 - 2022</h5>
+      </div>
+      <div class="data-detail col-lg-3 col-sm-6">
+        <h6>Time</h6>
+        <h5>09:00am</h5>
+      </div>
+      <div class="data-detail col-lg-3 col-sm-6">
+        <h6>Print receipt</h6>
+        <h5>Yes</h5>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="btn-save col-lg-3 mt-3">
+            <div class="d-flex justify-content-between">
+              <button class="me-2 w-50" type="button" (click)="Finish()">Finish</button>
+            <button class="bord w-50" routerLink="/services/airtime">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="tab-pane fade" id="nav-airtel" role="tabpanel" aria-labelledby="nav-airtel-tab" tabindex="0">
+    <h5>Airtel</h5>
+  </div>
+
+  <div class="tab-pane fade" id="nav-glo" role="tabpanel" aria-labelledby="nav-glo-tab" tabindex="0">
+    <h5>Glo</h5>
+  </div>
+
+  <div class="tab-pane fade" id="nav-9mobile" role="tabpanel" aria-labelledby="nav-9mobile-tab" tabindex="0">
+    <h5>9mobile</h5>
+  </div>
+</div>

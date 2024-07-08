@@ -1,0 +1,59 @@
+<form class="row mt-4">
+    <div class="col-lg-4">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Amount</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix></mat-icon>
+        </mat-form-field>
+    </div>
+
+    <div class="col-lg-4">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Does customer want to be identified?</mat-label>
+            <mat-select>
+                <mat-option value="one">Yes</mat-option>
+                <mat-option value="two">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="col-lg-4">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Registered customer?</mat-label>
+            <mat-select>
+                <mat-option value="one">Yes</mat-option>
+                <mat-option value="two">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="col-lg-4">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Customer phone number</mat-label>
+            <input matInput placeholder="Customer phone number">
+            <mat-icon matSuffix></mat-icon>
+        </mat-form-field>
+    </div>
+
+    <div class="col-lg-4">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Customer’s name</mat-label>
+            <input matInput placeholder="Customer’s name">
+            <mat-icon matSuffix></mat-icon>
+        </mat-form-field>
+    </div>
+
+    <div class="col-lg-4">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Print receipt?</mat-label>
+            <mat-select>
+                <mat-option value="one">Yes</mat-option>
+                <mat-option value="two">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="col-lg-4 btn-save">
+        <button routerLink="/services/airtime/detail" type="button" class="w-100">Proceed</button>
+    </div>
+</form>

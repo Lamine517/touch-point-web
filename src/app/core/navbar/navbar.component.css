@@ -1,0 +1,22 @@
+.user-content{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 14px;
+}
+.user-wrapper{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+.user-wrapper button{
+    background: none;
+    border: none;
+    color: #fff;
+    margin-left: 10px;
+}
+.icon-navbar{
+    margin-right: 1em;
+    font-size: 14px;
+    color: #fff;
+}

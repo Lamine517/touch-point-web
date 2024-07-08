@@ -1,0 +1,16 @@
+.nav-tabs{
+    /* width: 500px; */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    flex-wrap: wrap;
+    height: 100px;
+    overflow: auto;
+    text-align:justify;
+}
+.nav-tabs li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
