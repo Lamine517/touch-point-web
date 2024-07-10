@@ -1,8 +1,21 @@
-<nav id="banner" class="wrapper">
+<mat-toolbar></mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- SIDEBAR Start-->
+  <mat-sidenav #sidenav mode="side" opened class="mat-elevation-z8">
     <app-sidebar></app-sidebar>
-    <main class="content-wrapper">
-        <div class="content">
-            <router-outlet></router-outlet>
-        </div>
-    </main>
-</nav>
+  </mat-sidenav>
+  <!-- SIDEBAR End-->
+
+  <mat-sidenav-content>
+    <!-- NAVBAR Start-->
+    <app-button-toggle [sidenav]="sidenav"></app-button-toggle>
+    <!-- NAVBAR End-->
+
+    <!-- CONTENT Start-->
+    <div class="content mt-2">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- CONTENT End-->
+  </mat-sidenav-content>
+</mat-sidenav-container>

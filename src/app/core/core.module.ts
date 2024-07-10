@@ -4,6 +4,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainComponent } from './main/main.component';
 import { RouterModule } from '@angular/router';
+import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,16 +13,19 @@ import { RouterModule } from '@angular/router';
   declarations: [
     SidebarComponent,
     NavbarComponent,
-    MainComponent
+    MainComponent,
+    ButtonToggleComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports:[
     SidebarComponent,
     NavbarComponent,
-    MainComponent
+    MainComponent,
+    ButtonToggleComponent
   ]
 })
 export class CoreModule { }
