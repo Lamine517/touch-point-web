@@ -109,85 +109,78 @@ nav ul li.nav-item ul.submenu li.nav-item a:hover {
   padding: 1rem;
 }
 
-.login-all {
-  min-width: 100%;
-  min-height: 100vh;
-
+.wrapper-guest {
+  position: relative;
+  height: 100vh;
+  width: 100%;
 }
 
-.contante-login {
-  min-height: 100vh;
-  background: white;
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 30px;
 }
 
-.box {
-  padding: 75px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 3px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 6.56948px;
+.form-container #logo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
-
-
-
-.box-containte .titre h3 {
+.form-container h3#title {
   font-style: normal;
-  font-weight: 700;
-  font-size: 19.7321px;
-  line-height: 24px;
-  /* identical to box height */
-
-  letter-spacing: 0.035em;
-
-  color: #046CB4;
-
-}
-
-.box-containte .mdo h3 {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 24px;
   line-height: 17px;
-  /* identical to box height */
-
-
-  /* color-blue */
-
   color: #046CB5;
+  margin-bottom: 50px;
+}
+
+.form-container .text-navigate {
+  color: rgb(134, 18, 42);
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
 
 }
 
 .btn-login {
+  outline: none;
   border: none;
-  background: #86122A;
-  box-shadow: 0px 0.822171px 13.1547px rgba(0, 0, 0, 0.15);
-  border-radius: 4.11085px;
+  background: rgb(134, 18, 42);
+  /* box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.15); */
+  border-radius: 5px;
   color: white;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 17px;
-  color: #FFFFFF;
-  padding: 15px 149px;
-
+  transition: all .3s ease-in-out;
+  padding: 14px 24px;
 }
 
-/* mat-form-field {
-  min-width: 400px;
-} */
+.btn-login:hover {
+  background: rgba(134, 18, 42, .9);
+}
+
 
 .description {
   background: url('assets/images/bg-image-login.png');
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+  height: 100vh;
+  position: relative;
 }
 
 .contenu {
+  position: absolute;
+  top: 30vh;
   border-left: solid 6px white;
   padding: 10px;
 }
@@ -229,14 +222,14 @@ nav .nav {
 
 nav .nav button {
   border: none !important;
-  border-bottom: solid 5px red r !important;
+  border-bottom: solid 5px #A41837 !important;
 
 }
 
 nav .nav button h6 {
   color: #0C0D0C !important;
   border: none !important;
-  border-bottom: solid 5px red r !important;
+  border-bottom: solid 5px #A41837 !important;
 
 }
 
@@ -483,5 +476,12 @@ input.form-control:focus {
   margin-top: .9em;
 } */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
