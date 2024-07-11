@@ -468,3 +468,18 @@ body {
 .mat-drawer-inner-container::-webkit-scrollbar {
   display: none !important;
 }
+
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.flex-start{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}

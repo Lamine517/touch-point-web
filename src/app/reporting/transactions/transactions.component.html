@@ -21,17 +21,19 @@
 </div>
 <div class="tab-content mt-3 p-3" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-om" role="tabpanel" aria-labelledby="nav-om-tab" tabindex="0">
-    <figure class="d-flex align-content-between align-items-center">
-      <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
-      <audio controls src="assets/son/test-audio.ogg">
-        <a href="assets/son/test-audio.ogg">
-          Download audio
-        </a>
-      </audio>
-      <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic"
-        mat-mini-fab aria-label="Example icon button with a home icon">
-        <i class="fa fa-video"></i>
-      </button>
+    <figure class="flex-between">
+      <figcaption>Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
+      <div class="flex-start">
+        <audio controls src="assets/son/test-audio.ogg">
+          <a href="assets/son/test-audio.ogg">
+            Download audio
+          </a>
+        </audio>
+        <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic" mat-mini-fab
+          aria-label="Example icon button with a home icon">
+          <i class="fa fa-video"></i>
+        </button>
+      </div>
     </figure>
     <h2>Orange Money</h2>
     <app-single-transaction></app-single-transaction>
