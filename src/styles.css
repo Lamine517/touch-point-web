@@ -235,7 +235,7 @@ form mat-form-field {
 }
 
 .box-ticket {
-  padding: 5px;
+  padding: 10px;
   background: #FFFFFF;
   /* effect */
   cursor: pointer;
@@ -244,13 +244,34 @@ form mat-form-field {
   margin-top: 10px;
 }
 
-.detail h4 {
+.box-ticket-content{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap:6px;
+}
 
+.box-ticket-content .detail{
+  display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 8px;
+}
+.box-ticket-content .detail h4 {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #332B5A;
+  padding: 0;
+  margin: 0;
+}
+.box-ticket-content .detail p{
+  margin: 0;
+  padding: 0;
 }
 
 .icons-box {
