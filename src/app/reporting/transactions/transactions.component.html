@@ -1,87 +1,97 @@
 <!-- Menu  -->
 <app-navbar [title]="'Transactions'"></app-navbar>
-
 <div class="tap-section cards g-3">
-    <nav class="px-4 pb-2">
-      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <li class="nav-item nav-item-custom" *ngFor="let item of tablist" [id]="item.id">
-          <a class="nav-link" [ngClass]="{active: item.selected === true}" aria-current="page" data-bs-toggle="tab"
-            [attr.data-bs-target]="'#'+item.controls" type="button" role="tab" [attr.aria-controls]="item.controls"
-            [attr.aria-selected]="item.selected">
-            <img [src]="item.img" [alt]="item.title" [title]="item.title" width="40px">
-          </a>
-        </li>
-      </div>
-    </nav>
+  <div class="tabs-container">
+    <button class="scroll-btn left" (click)="scrollTabs('left')" type="button" [class.hidden]="!showLeftBtn">
+      <i class="fa fa-chevron-left"></i>
+    </button>
+  <div class="nav nav-tabs" #navTab id="nav-tab" role="tablist">
+    <li class="nav-item nav-item-custom" *ngFor="let item of tablist" [id]="item.id">
+      <a class="nav-link" [ngClass]="{active: item.selected === true}" aria-current="page" data-bs-toggle="tab"
+        [attr.data-bs-target]="'#'+item.controls" type="button" role="tab" [attr.aria-controls]="item.controls"
+        [attr.aria-selected]="item.selected">
+        <img [src]="item.img" [alt]="item.title" [title]="item.title" width="40px" class="tab-logo">
+      </a>
+    </li>
   </div>
-  <div class="tab-content mt-3 p-3" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-om" role="tabpanel" aria-labelledby="nav-om-tab" tabindex="0">
-      <figure class="d-flex align-content-between align-items-center">
-        <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
-       <audio controls src="assets/son/test-audio.ogg">
-          <a href="assets/son/test-audio.ogg">
-            Download audio
-          </a>
-        </audio>
-        <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic" mat-mini-fab aria-label="Example icon button with a home icon">
-          <i class="fa fa-video"></i>
-        </button>
-      </figure>
-      <h2>Orange Money</h2>
-      <app-single-transaction></app-single-transaction>
-    </div>
-
-    <div class="tab-pane fade" id="nav-wave" role="tabpanel" aria-labelledby="nav-wave-tab" tabindex="0">
-      <figure class="d-flex align-content-between align-items-center">
-        <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
-       <audio controls src="assets/son/test-audio.ogg">
-          <a href="assets/son/test-audio.ogg">
-            Download audio
-          </a>
-        </audio>
-        <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic" mat-mini-fab aria-label="Example icon button with a home icon">
-          <i class="fa fa-video"></i>
-        </button>
-        <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic" mat-mini-fab aria-label="Example icon button with a home icon">
-          <i class="fa fa-video"></i>
-        </button>
-      </figure>
-      <h2>Wave</h2>
-      <app-single-transaction></app-single-transaction>
-    </div>
-
-    <div class="tab-pane fade" id="nav-ria" role="tabpanel" aria-labelledby="nav-ria-tab" tabindex="0">
-      <figure class="d-flex align-content-between align-items-center">
-        <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
-       <audio controls src="assets/son/test-audio.ogg">
-          <a href="assets/son/test-audio.ogg">
-            Download audio
-          </a>
-        </audio>
-        <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic" mat-mini-fab aria-label="Example icon button with a home icon">
-          <i class="fa fa-video"></i>
-        </button>
-      </figure>
-      <h2>Ria</h2>
-      <app-single-transaction></app-single-transaction>
-    </div>
-
-    <div class="tab-pane fade" id="nav-airtel" role="tabpanel" aria-labelledby="nav-airtel-tab" tabindex="0">
-      <figure class="d-flex align-content-between align-items-center">
-        <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
-       <audio controls src="assets/son/test-audio.ogg">
-          <a href="assets/son/test-audio.ogg">
-            Download audio
-          </a>
-        </audio>
-        <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic" mat-mini-fab aria-label="Example icon button with a home icon">
-          <i class="fa fa-video"></i>
-        </button>
-      </figure>
-      <h2>Airtel</h2>
-      <app-single-transaction></app-single-transaction>
-    </div>
+    <button class="scroll-btn right" (click)="scrollTabs('right')" type="button" [class.hidden]="!showRightBtn">
+      <i class="fa fa-chevron-right"></i>
+    </button>
   </div>
+</div>
+<div class="tab-content mt-3 p-3" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-om" role="tabpanel" aria-labelledby="nav-om-tab" tabindex="0">
+    <figure class="d-flex align-content-between align-items-center">
+      <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
+      <audio controls src="assets/son/test-audio.ogg">
+        <a href="assets/son/test-audio.ogg">
+          Download audio
+        </a>
+      </audio>
+      <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic"
+        mat-mini-fab aria-label="Example icon button with a home icon">
+        <i class="fa fa-video"></i>
+      </button>
+    </figure>
+    <h2>Orange Money</h2>
+    <app-single-transaction></app-single-transaction>
+  </div>
+
+  <div class="tab-pane fade" id="nav-wave" role="tabpanel" aria-labelledby="nav-wave-tab" tabindex="0">
+    <figure class="d-flex align-content-between align-items-center">
+      <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
+      <audio controls src="assets/son/test-audio.ogg">
+        <a href="assets/son/test-audio.ogg">
+          Download audio
+        </a>
+      </audio>
+      <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic"
+        mat-mini-fab aria-label="Example icon button with a home icon">
+        <i class="fa fa-video"></i>
+      </button>
+      <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic"
+        mat-mini-fab aria-label="Example icon button with a home icon">
+        <i class="fa fa-video"></i>
+      </button>
+    </figure>
+    <h2>Wave</h2>
+    <app-single-transaction></app-single-transaction>
+  </div>
+
+  <div class="tab-pane fade" id="nav-ria" role="tabpanel" aria-labelledby="nav-ria-tab" tabindex="0">
+    <figure class="d-flex align-content-between align-items-center">
+      <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
+      <audio controls src="assets/son/test-audio.ogg">
+        <a href="assets/son/test-audio.ogg">
+          Download audio
+        </a>
+      </audio>
+      <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic"
+        mat-mini-fab aria-label="Example icon button with a home icon">
+        <i class="fa fa-video"></i>
+      </button>
+    </figure>
+    <h2>Ria</h2>
+    <app-single-transaction></app-single-transaction>
+  </div>
+
+  <div class="tab-pane fade" id="nav-airtel" role="tabpanel" aria-labelledby="nav-airtel-tab" tabindex="0">
+    <figure class="d-flex align-content-between align-items-center">
+      <figcaption class="mx-3">Veuillez cliquer sur l’audio pour en savoir plus merci :</figcaption>
+      <audio controls src="assets/son/test-audio.ogg">
+        <a href="assets/son/test-audio.ogg">
+          Download audio
+        </a>
+      </audio>
+      <button class="ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" color="basic"
+        mat-mini-fab aria-label="Example icon button with a home icon">
+        <i class="fa fa-video"></i>
+      </button>
+    </figure>
+    <h2>Airtel</h2>
+    <app-single-transaction></app-single-transaction>
+  </div>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -91,7 +101,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Fri_tL6ptIY" title="Présentation TOUCH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Fri_tL6ptIY" title="Présentation TOUCH"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
     </div>
   </div>
