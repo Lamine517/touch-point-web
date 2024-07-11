@@ -58,6 +58,10 @@
 }
 
 /* sub mmenu */
+.sidebar ul li.nav-item ul.submenu li.nav-item {
+  width: 100%;
+  position: relative;
+}
 .sidebar ul li.nav-item ul.submenu li.nav-item a {
   text-indent: 40px;
 }
@@ -69,7 +73,6 @@ a.nav-link-sub[aria-expanded="true"] {
 
 a.nav-link-sub[aria-expanded="true"] ul  {
   display: inline-block;
-  background-color: red;
 }
 
 .sidebar ul li.nav-item ul.submenu li.nav-item a.active {
