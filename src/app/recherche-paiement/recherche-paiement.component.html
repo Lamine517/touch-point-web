@@ -1,0 +1,83 @@
+<div class="search-wrapper">
+  <div class="container">
+
+    <nav class="navbar my-navbar bg-transparent">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:(0)">
+          <img src="assets/images/logo.png" alt="Touchpoint">
+        </a>
+    <form class="d-flex" role="search">
+      <button class="btn-signin" [routerLink]="['/auth/login']"><i class="material-icons">person</i>Connexion</button>
+    </form>
+  </div>
+</nav>
+
+
+
+    <div class="search-wrapper-content">
+        <h1 class="search__title">Trouvez votre facture</h1>
+
+        <p class="search__desc my-4">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
+          possimus ad hic quos alias officia laborum qui vel voluptates?
+          Doloribus beatae voluptatibus expedita illo cumque vero autem,
+          perspiciatis accusamus similique!
+        </p>
+
+        <div class="search-form">
+          <div class="search-form-box">
+            <input type="search" class="form-control" placeholder="Réference facture" [(ngModel)]="searchTerm" />
+            <button type="button" (click)="onSearch()"><i class="fa fa-search"></i></button>
+          </div>
+
+          <div class="search-result" *ngIf="isResult && foundFacture">
+            <h2 class="text-black text-start">
+              Réference de paiement: <span class="text-muted">{{ foundFacture.reference }}</span>
+            </h2>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">EMISE PAR</th>
+                    <th scope="col">DATE</th>
+                    <th scope="col">ETAT</th>
+                    <th scope="col">MONTANT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ foundFacture.emisePar }}</td>
+                    <td>{{ foundFacture.date }}</td>
+                    <td>
+                      <span class="badge text-bg-warning">{{ foundFacture.statut }}</span>
+                    </td>
+                    <td>{{ foundFacture.montant }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-black fw-bold">Choisissez un moyen de paiement</h3>
+
+            <ul class="moyen__paiement">
+              <li *ngFor="let item of moyenPaiement">
+                <a class="nav-link" type="button" role="tab">
+                  <img [src]="item.img" [alt]="item.title" [title]="item.title" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="search-result" *ngIf="!foundFacture && searchTerm">
+            <h2 class="text-black text-start">
+              Aucune facture disponible pour la référence <span class="text-muted">{{ searchTerm }}</span>
+            </h2>
+          </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4">
+      <p class="text-center text-white-50 border-top pt-3">© 2024 Touchpoint, Inc</p>
+    </footer>
+  </div>
+</div>

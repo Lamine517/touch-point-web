@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { RecherchePaiementComponent } from './recherche-paiement/recherche-paiement.component';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,10 @@ export const routes: Routes = [
     path: 'transactions',
     loadChildren: () =>
       import('./reporting/reporting.module').then((mod) => mod.ReportingModule),
+  },
+  {
+    path: 'recherche-paiement',
+    component: RecherchePaiementComponent
   },
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
 ];

@@ -1,0 +1,19 @@
+.separator-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.separator {
+  font-size: 14px;
+  color: #6c757d;
+  padding: 0 10px;
+}
+
+.separator-container::before,
+.separator-container::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background-color: #9ea4aa;
+}
