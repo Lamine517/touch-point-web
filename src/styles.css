@@ -1,18 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('./assets/css/style-button.css');
+
+:root {
+  /* ==== Couleurs Dominantes ===== */
+  --primary-color-60: #000091;
+  --primary-color-30: #A3A3DE;
+  --primary-color-10: #EEF7FF;
+
+  /* ==== Couleurs Secondaires ===== */
+  --secondary-color-60: #284D9A;
+  --secondary-color-30: #39AEE5;
+  --secondary-color-10: #4BB29E;
+
+  /* ==== Couleurs Complémentaires ===== */
+  --red-color: #98152D;
+  --light-color: #F7FAFC;
+  --white-color: #ffffff;
+  --black-color: #212121;
+
+  /* ==== Font Family ===== */
+  --font-family-roboto: 'Roboto', sans-serif;
+  --font-family-inter: 'Inter', sans-serif;
+}
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family-Roboto);
   box-sizing: border-box;
 }
 
 body {
   background: #F7FAFC;
+  font-family: var(--font-family-Roboto);
 }
 
 #banner {
   height: 300px;
-  background: linear-gradient(180deg, #98152D 0%, #4F2D5C 100%);
+  background: linear-gradient(180deg, var(--primary-color-60) 0%, var(--secondary-color-10) 100%);
 }
 
 .wrapper {
@@ -68,12 +91,12 @@ body {
   font-weight: bold;
   font-size: 24px;
   line-height: 17px;
-  color: rgb(4, 108, 181);
+  color: var(--secondary-color-30);
   margin-bottom: 50px;
 }
 
 .form-container .text-navigate {
-  color: rgb(134, 18, 42);
+  color: var(--primary-color-60);
   display: flex;
   justify-content: flex-end;
   margin-bottom: 30px;
@@ -83,7 +106,7 @@ body {
 .btn-login {
   outline: none;
   border: none;
-  background: rgb(134, 18, 42);
+  background: var(--primary-color-60);
   /* box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.15); */
   border-radius: 5px;
   color: white;
@@ -96,7 +119,7 @@ body {
 }
 
 .btn-login:hover {
-  background: rgba(134, 18, 42, .9);
+  background: var(--secondary-color-60);
 }
 
 
@@ -153,14 +176,14 @@ nav .nav {
 
 nav .nav button {
   border: none !important;
-  border-bottom: solid 5px #A41837 !important;
+  border-bottom: solid 5px var(--primary-color-60) !important;
 
 }
 
 nav .nav button h6 {
   color: #0C0D0C !important;
   border: none !important;
-  border-bottom: solid 5px #A41837 !important;
+  border-bottom: solid 5px var(--primary-color-60) !important;
 
 }
 
@@ -177,7 +200,7 @@ form mat-form-field {
   font-size: 16px;
   border: none;
   border-radius: 10px;
-  background: #A41837;
+  background: var(--primary-color-60);
   color: white;
 }
 
@@ -308,9 +331,9 @@ form mat-form-field {
 }
 
 .btn-save .bord {
-  border: solid 1px #A41837;
+  border: solid 1px var(--primary-color-60);
   background: white;
-  color: #86122A;
+  color: var(--primary-color-60);
 }
 
 select.form-select:focus,
@@ -328,7 +351,7 @@ input.form-control:focus {
 
 .save-ticket {
   padding: 10px 30px;
-  background: #A41837;
+  background: var(--primary-color-60);
   border: none;
   color: white;
   border-radius: 10px;
@@ -365,12 +388,12 @@ input.form-control:focus {
 
 .titre-line {
   padding-bottom: 6px;
-  border-bottom: solid 1px #86122A;
+  border-bottom: solid 1px var(--primary-color-60);
 }
 
 
 .titre-line h2 {
-  color: #98152D;
+  color: var(--primary-color-60);
   padding: 0;
   margin: 0;
 }
@@ -445,15 +468,6 @@ input.form-control:focus {
   margin-top: .9em;
 } */
 
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
 .mat-drawer-inner-container {
   -ms-overflow-style: none !important;
@@ -484,30 +498,3 @@ body {
   flex-wrap: wrap;
 }
 
-
-.btn-red-light {
-  text-decoration: none;
-  outline: none;
-  border: none;
-  padding: 12px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-
-
-  border-radius: 4px;
-  background: transparent;
-  color: rgba(176, 56, 67, 1);
-  border: solid 1px rgba(176, 56, 67, .2);
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all .3s ease-in-out;
-}
-
-.btn-red-light:hover {
-  border-color: rgba(176, 56, 67, .7);
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, .1) */
-}

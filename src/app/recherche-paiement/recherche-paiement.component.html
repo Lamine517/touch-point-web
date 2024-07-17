@@ -1,38 +1,51 @@
 <div class="search-wrapper">
   <div class="container">
-
     <nav class="navbar my-navbar bg-transparent">
       <div class="container-fluid">
         <a class="navbar-brand" href="javascript:(0)">
-          <img src="assets/images/logo.png" alt="Touchpoint">
+          <img
+            src="assets/images/logo-adie.png"
+            alt="Sénégal Numérique"
+            class="img-fluid"
+          />
         </a>
+
         <form class="d-flex" role="search">
-          <button class="btn-signin" [routerLink]="['/auth/login']"><i
-              class="material-icons">person</i>Connexion</button>
+          <button class="btn-signin" [routerLink]="['/auth/login']">
+            <i class="material-icons">person</i>
+            <span class="btn-signin-text">Connexion</span>
+          </button>
         </form>
       </div>
     </nav>
-
 
     <div class="search-wrapper-content">
       <h1 class="search__title">Trouvez votre facture</h1>
 
       <p class="search__desc my-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
-        possimus ad hic quos alias officia laborum qui vel voluptates?
-        Doloribus beatae voluptatibus expedita illo cumque vero autem,
-        perspiciatis accusamus similique!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam possimus
+        ad hic quos alias officia laborum qui vel voluptates? Doloribus beatae
+        voluptatibus expedita illo cumque vero autem, perspiciatis accusamus
+        similique!
       </p>
 
       <div class="search-form">
         <div class="search-form-box">
-          <input type="search" class="form-control" placeholder="Réference facture" [(ngModel)]="searchTerm" />
-          <button type="button" (click)="onSearch()"><i class="fa fa-search"></i></button>
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Réference facture"
+            [(ngModel)]="searchTerm"
+          />
+          <button type="button" (click)="onSearch()">
+            <i class="fa fa-search"></i>
+          </button>
         </div>
 
         <div class="search-result" *ngIf="isResult && foundFacture">
           <h2 class="text-black text-start">
-            Réference de paiement: <span class="text-muted">{{ foundFacture.reference }}</span>
+            Réference de paiement:
+            <span class="text-muted">{{ foundFacture.reference }}</span>
           </h2>
           <div class="table-responsive">
             <table class="table">
@@ -46,12 +59,14 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>{{ foundFacture.emisePar }}</td>
-                  <td>{{ foundFacture.date }}</td>
-                  <td>
-                    <span class="badge text-bg-warning">{{ foundFacture.statut }}</span>
+                  <td data-label="EMISE PAR">{{ foundFacture.emisePar }}</td>
+                  <td data-label="DATE">{{ foundFacture.date }}</td>
+                  <td data-label="ETAT">
+                    <span class="badge text-bg-warning">{{
+                      foundFacture.statut
+                    }}</span>
                   </td>
-                  <td>{{ foundFacture.montant }}</td>
+                  <td data-label="MONTANT">{{ foundFacture.montant }}</td>
                 </tr>
               </tbody>
             </table>
@@ -70,14 +85,17 @@
 
         <div class="search-result" *ngIf="!foundFacture && searchTerm">
           <h2 class="text-black text-start">
-            Aucune facture disponible pour la référence <span class="text-muted">{{ searchTerm }}</span>
+            Aucune facture disponible pour la référence
+            <span class="text-muted">{{ searchTerm }}</span>
           </h2>
         </div>
       </div>
     </div>
 
     <footer class="py-3 my-4">
-      <p class="text-center text-white-50 border-top pt-3">© 2024 Touchpoint, Inc</p>
+      <p class="text-center text-white-50 border-top pt-3">
+        © 2024 Sénégal Numérique S.A.
+      </p>
     </footer>
   </div>
 </div>

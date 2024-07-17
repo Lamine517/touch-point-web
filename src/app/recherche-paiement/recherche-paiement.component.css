@@ -1,13 +1,16 @@
 /* General styles */
 .search-wrapper {
-  position: relative;
-  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   width: 100%;
   background-image: url('../../assets/images/bg-search2.jpg');
   background-size: cover;
-  background-position: center 0;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  position: relative;
+  animation: backgroundAnimation 30s infinite alternate;
 }
 
 .search-wrapper::before {
@@ -17,8 +20,29 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, rgba(4, 108, 181, .7), rgba(134, 18, 42, .8));
+  background: linear-gradient(to bottom right, rgba(75, 178, 158, .7), rgba(0, 0, 145, .8));
   z-index: 1;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: center top;
+  }
+
+  100% {
+    background-position: center bottom;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.container-fluid {
+  position: relative;
+  z-index: 2;
 }
 
 .search-wrapper-content {
@@ -29,10 +53,9 @@
   max-width: 720px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  height: calc(100vh - 56px - 60px);
-  /* Adjusted to account for navbar and footer heights */
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .search-wrapper .search-wrapper-content .search__desc {
@@ -55,8 +78,6 @@
 
 /* Form styles */
 .search-form {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -82,8 +103,8 @@
 }
 
 .search-form:focus-within {
-  border-color: rgba(176, 56, 67, 1);
-  box-shadow: 0 8px 16px rgba(176, 56, 67, .4), inset 0 4px 8px rgba(176, 56, 67, .4);
+  border-color: var(--primary-color-60);
+  box-shadow: 0 8px 16px var(--secondary-color-60), inset 0 4px 8px var(--secondary-color-60);
 }
 
 .search-form input:focus {
@@ -94,7 +115,7 @@
 
 .search-form button {
   border: none;
-  background-color: rgba(176, 56, 67, 1);
+  background-color: var(--primary-color-60);
   color: #fff;
   font-weight: 600;
   border-radius: 100px;
@@ -159,7 +180,7 @@
 }
 
 .moyen__paiement li:hover {
-  border: solid 2px rgba(134, 18, 42, 1);
+  border: solid 2px var(--primary-color-60);
 }
 
 .moyen__paiement li a {
@@ -184,14 +205,17 @@
 
 /* Footer styles */
 footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   left: 0;
   right: 0;
   color: #fff;
   text-align: center;
   padding: 10px 0;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
 }
 
 footer p {
@@ -199,21 +223,19 @@ footer p {
   padding: 0;
 }
 
-.my-navbar,footer{
+.my-navbar,
+footer {
   z-index: 1;
 }
 
-.btn-signin{
+.btn-signin {
   outline: none;
   border: none;
   padding: 12px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-
-
   border-radius: 100px;
   background: transparent;
   color: #fff;
@@ -222,35 +244,166 @@ footer p {
   font-size: 16px;
   cursor: pointer;
   transition: all .3s ease-in-out;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
 
-.btn-signin:hover{
-  background: rgba(176, 56, 67, 1);
-  border: solid 1px rgba(176, 56, 67, 1);
+.btn-signin:hover {
+  background: var(--primary-color-60);
+  border: solid 1px var(--primary-color-60);
+}
+
+.btn-signin .btn-signin-text {
+  display: inline;
+}
+
+/* Responsive table styles */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.navbar-brand img {
+  width: 300px;
 }
 
 /* Responsive styles */
-@media (max-width: 992px) {
-.search-wrapper-content {
-    height: 100%;
+@media (max-width: 1200px) {
+  .search-wrapper-content .search__desc {
+    font-size: 16px;
+  }
+
+  .search-wrapper-content h1.search__title {
+    font-size: 36px;
   }
 }
-@media (max-width: 768px) {
-  .search-wrapper-content {
-    padding: 10px;
+
+@media (max-width: 992px) {
+  .search-wrapper-content .search__desc {
+    font-size: 14px;
   }
 
-  .search-form {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .search__title {
+  .search-wrapper-content h1.search__title {
     font-size: 32px;
   }
 
-  .search__desc {
-    font-size: 16px;
+  .search-wrapper-content {
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    width: 200px;
+  }
+
+  .search-wrapper-content {
+    padding: 5px;
+  }
+
+  .search-form {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .search-wrapper-content .search__desc {
+    font-size: 12px;
+  }
+
+  .search-wrapper-content h1.search__title {
+    font-size: 28px;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 0;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .btn-signin .btn-signin-text {
+    display: none;
+  }
+
+  .search-result {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-wrapper-content .search__desc {
+    font-size: 14px !important;
+  }
+
+  .search-wrapper-content h1.search__title {
+    font-size: 28px !important;
+  }
+
+  .search-wrapper-content .search-result h2 {
+    font-size: 15px !important;
+  }
+
+  .search-result {
+    padding: 5px;
+  }
+
+  .search-form input {
+    padding: 8px 10px;
+  }
+
+  .search-form button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .btn-signin {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .moyen__paiement li {
+    width: 50px;
+    height: 50px;
+  }
+
+  .moyen__paiement li a img {
+    width: 40px;
   }
 }

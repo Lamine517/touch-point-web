@@ -33,5 +33,5 @@ export const routes: Routes = [
     path: 'recherche-paiement',
     component: RecherchePaiementComponent
   },
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
 ];
